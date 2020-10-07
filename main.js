@@ -3,10 +3,10 @@
  ******************/
 
 function xify(str) {
-  let newStr = ''; 
+  let newStr = '';
 
-  for(let i = 0; i < str.length; i++) {
-      newStr += 'x';
+  for (let i = 0; i < str.length; i++) {
+    newStr += 'x';
   }
 
   return newStr;
@@ -14,25 +14,59 @@ function xify(str) {
 
 
 function smilify(str) {
-  let newStr = ''; 
+  let newStr = '';
 
-  for(let i = 0; i < str.length; i++) {
-      newStr += '😊';
+  for (let i = 0; i < str.length; i++) {
+    newStr += '😊';
   }
 
   return newStr;
 }
 
+function yellingChars(str) {
+  let newStr = '';
+  for (let i = 0; i < str.length; i++) {
+    newStr += str[i] + '!';
+  }
+  return newStr;
+}
+
+
+function indexedChars(str) {
+  let newStr = '';
+  for (let i = 0; i < str.length; i++) {
+    newStr += i + str[i];
+  }
+  return newStr;
+}
+
+function numberedChars(str) {
+  let newStr = '';
+  for (let i = 0; i < str.length; i++) {
+    newStr += '(' + (i + 1) + ')' + str[i];
+  }
+  return newStr;
+
+}
+
+function exclaim(str) {
+  let newStr = '';
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === '.' || str[i] === '?') {
+      newStr += '!';
+    } else {
+      newStr += str[i];
+    }
+  }
+  return newStr;
+}
 
 
 
-
-
-
- /********************************************
- * CODE DOWN HERE IS FOR INTERNAL USE ONLY. *
- *           PLEASE DON'T TOUCH!            *
- ********************************************/
+/********************************************
+* CODE DOWN HERE IS FOR INTERNAL USE ONLY. *
+*           PLEASE DON'T TOUCH!            *
+********************************************/
 
 if (typeof xify === 'undefined') {
   xify = undefined;
@@ -95,6 +129,7 @@ module.exports = {
   xify,
   smilify,
   indexedChars,
+  yellingChars,
   numberedChars,
   exclaim,
   repeatIt,
